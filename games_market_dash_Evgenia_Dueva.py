@@ -37,7 +37,7 @@ app.layout = html.Div([
             dcc.Checklist(id="slct_platforms",
                  options = platforms,
                 value = ['DC','PS2'],
-                 inline=True,
+#                 inline=True,
                  style={'width': "50%"}
                  )
             ], className="six columns"),
@@ -46,7 +46,7 @@ app.layout = html.Div([
             dcc.Checklist(id="slct_rating",
                  options=ratings,
                           value = ['E'],
-                          inline=True,
+#                          inline=True,
                  style={'width': "50%"}
                  )
             ], className="six columns"),
