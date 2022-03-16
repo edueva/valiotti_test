@@ -1,5 +1,5 @@
--- ¬ случае большего числа переменных
--- стоит использовать подходы  типа
+-- In case of larger amount of names
+-- One should use more sophisticated approaches
 -- https://towardsdatascience.com/transpositions-in-sql-c1cf724dfa2a
 -- https://www.sqlshack.com/multiple-options-to-transposing-rows-into-columns/
     
