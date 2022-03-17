@@ -124,11 +124,13 @@ def display_area(selected_genres, selected_ratings, selected_years):
     dff.sort_values(['Year_of_Release','Platform'], inplace = True)
     
 # Data for scatteplot    
-    df_scat = df_fig.query('User_Score != "tbd"') \
-        .groupby(['Genre', 'User_Score', 'Critic_Score'], as_index = False) \
-        .agg({'Name':'nunique'}) \
-        .rename(columns = {'Name':'Games_number'})
-    
+    #df_scat = df_fig.query('User_Score != "tbd"') \
+    #    .groupby(['Genre', 'User_Score', 'Critic_Score'], as_index = False) \
+    #    .agg({'Name':'nunique'}) \
+    #    .rename(columns = {'Name':'Games_number'})
+
+
+    df_scat = df_fig.query('User_Score != "tbd"')
     df_scat['User_Score'] = df_scat['User_Score'].astype('float32')
 
 # areaplot    
@@ -162,11 +164,13 @@ def display_area(selected_genres, selected_ratings, selected_years):
     #fig1.update_yaxes(automargin=True)
 
 # scatteplot     
-    fig2 = px.scatter(df_scat, x="User_Score", y="Critic_Score", color="Genre", size = 'Games_number',
+    fig2 = px.scatter(df_scat, x="User_Score", y="Critic_Score", color="Genre", #size = 'Games_number',
                      labels={
                      "User_Score": "User score",
-                     "Critic_Score": "Critic score",
-                     "Games_number":"Games number"})
+                     "Critic_Score": "Critic score"
+                     #"Games_number":"Games number"
+                     },
+                     hover_name = "Name")
     fig2.update_layout(margin=dict(l=20, r=60, t=70, b=70),
                        #legend=dict(yanchor="top",
                        #            y=0.99,
