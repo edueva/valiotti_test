@@ -1,3 +1,3 @@
 # valiotti_test
 
-One can see dashboard here: https://valiotti-test.herokuapp.com/
+One can find resulting games market dashboard here: https://valiotti-test.herokuapp.com/
